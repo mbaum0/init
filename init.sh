@@ -63,7 +63,7 @@ function ask_feature {
 
 function print_feature_selection {
   case "${!1}" in
-    [yY]* ) printf "${GREEN}[Run] ${RST} $2\n"
+    [yY]* ) printf "${GREEN}[Run ]${RST} $2\n"
             ;;
     [nN]* ) printf "${RED}[Skip]${RST} $2\n"
             ;;
@@ -132,7 +132,9 @@ printf "${RST}"
 # review selected options
 print_header
 print_feature_selections
-echo
+
+printf "\n"
+
 read -n 1 -p "Continue with these options? [y/N] " answer
 case $answer in
   [yY]* ) ;;
